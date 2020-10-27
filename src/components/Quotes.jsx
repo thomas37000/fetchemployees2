@@ -20,7 +20,11 @@ class Quotes extends Component {
     this.getSimpson = this.getSimpson.bind(this);
   }
 
-  getSimpson() {
+  componentDidMount() {
+    this.getSimpson();
+  }
+
+  getSimpson = () => {
     axios
       .get("https://thesimpsonsquoteapi.glitch.me/quotes")
       .then((response) => response.data)
